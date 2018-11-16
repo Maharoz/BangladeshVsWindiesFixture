@@ -1,0 +1,45 @@
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item" >
+      <a class="nav-link nav-item" [class.active]="viewMode == 'odi'" (click)="viewMode='odi'" >ODI</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="viewMode == 'test'" (click)="viewMode='test'">TEST</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="viewMode == 'T20'" (click)="viewMode='T20'">T20</a>
+    </li>
+  </ul>
+
+
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'odi'">
+        <div class="container fixtures-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fixtures">
+                        <table width="100%" class="table ">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th>MatchNo</th>
+                                <th>Venue</th>
+                                <th>Date</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody class="Players-body table-striped">
+                                <tr *ngFor="let match of matches">
+                                    <td>{{ match.MatchNo }}</td>
+                                    <td>{{ match.Venue }}</td>
+                                    <td>{{ match.Date }}</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  *ngSwitchCase="'test'">test View Content</div>
+    <div  *ngSwitchCase="'T20'">t20 View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
