@@ -1,11 +1,11 @@
-<ul class="nav nav-pills nav-fill">
-    <li class="nav-item" >
+<ul class="nav nav-pills nav-fill nav-margin border border-primary">
+    <li class="nav-item border border-primary" >
       <a class="nav-link nav-item" [class.active]="viewMode == 'odi'" (click)="viewMode='odi'" >ODI</a>
     </li>
-    <li class="nav-item" >
+    <li class="nav-item border border-primary" >
       <a class="nav-link" [class.active]="viewMode == 'test'" (click)="viewMode='test'">TEST</a>
     </li>
-    <li class="nav-item" >
+    <li class="nav-item border border-primary" >
       <a class="nav-link" [class.active]="viewMode == 'T20'" (click)="viewMode='T20'">T20</a>
     </li>
   </ul>
@@ -13,7 +13,38 @@
 
   <div [ngSwitch]="viewMode">
     <div *ngSwitchCase="'odi'">
-        <div class="container">
+
+        <div class="container fixture-table border border-primary">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fixtures">
+                        <table width="100%" class="table table-hover ">
+                            <thead class="thead-primary ">
+                            <tr>
+                                <th>MatchNo</th>
+                                <th>Venue</th>
+                                <th>Date</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody class="table-striped ">
+                                <tr *ngFor="let match of odimatches">
+                                    <td>{{ match.MatchNo }}</td>
+                                    <td>{{ match.Venue }}</td>
+                                    <td>{{ match.Date }}</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div  *ngSwitchCase="'test'">
+
+        <div class="container fixture-table border border-primary">
             <div class="row">
                 <div class="col-md-12">
                     <div class="fixtures">
@@ -27,7 +58,7 @@
                             </tr>
                             </thead>
                             <tbody class="table-striped">
-                                <tr *ngFor="let match of matches">
+                                <tr *ngFor="let match of twentyMatches">
                                     <td>{{ match.MatchNo }}</td>
                                     <td>{{ match.Venue }}</td>
                                     <td>{{ match.Date }}</td>
@@ -37,9 +68,34 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </div>
-    <div  *ngSwitchCase="'test'">test View Content</div>
-    <div  *ngSwitchCase="'T20'">t20 View Content</div>
+    <div  *ngSwitchCase="'T20'"> 
+        <div class="container fixture-table border border-primary">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fixtures">
+                        <table width="100%" class="table table-hover">
+                            <thead class="thead-primary">
+                            <tr>
+                                <th>MatchNo</th>
+                                <th>Venue</th>
+                                <th>Date</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody class="table-striped">
+                                <tr *ngFor="let match of testmatche">
+                                    <td>{{ match.MatchNo }}</td>
+                                    <td>{{ match.Venue }}</td>
+                                    <td>{{ match.Date }}</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div></div>
     <div *ngSwitchDefault>Otherwise</div>
 </div>
