@@ -14,3 +14,10 @@
 .table-content{
     text-align: center;
 }
+
+.nav-border-tab{
+    
+        border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+      
+}
