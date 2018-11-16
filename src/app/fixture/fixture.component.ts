@@ -1,6 +1,7 @@
 import { TESTMATCHES } from './../testMacthes';
 import { TWENTY } from './../tTwentyMatches';
 import { ODIMATCHES } from './../odiMatches';
+
 import { Match } from './../match';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,11 +13,13 @@ import { Component, OnInit } from '@angular/core';
 export class FixtureComponent implements OnInit {
   viewMode = 'odi';
 
+
    odimatches  = ODIMATCHES;
    
    twentyMatches =TWENTY;
     
    testmatche = TESTMATCHES;
+   
    
   constructor() {
 
