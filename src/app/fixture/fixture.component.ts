@@ -1,4 +1,4 @@
-import { OdiMatches } from './../odiMatches';
+import { ODIMATCHES } from './../odiMatches';
 import { Match } from './../match';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fixture.component.css']
 })
 export class FixtureComponent implements OnInit {
-  viewMode = 'odi'
-   matches  = [
-
-    {MatchNo : 1 , Venue: 'dhaka' , Date: '3 pm'},
-    {MatchNo : 2 , Venue: 'khulna' , Date: '3 pm'}
-    
-    ];
+  viewMode = 'odi';
+   matches  = ODIMATCHES;
     onSave(){
       console.log(this.matches);
     }

@@ -1,5 +1,6 @@
-export class Match{
-    MatchNo : number;
+export class Match
+{
+    MatchNo : string;
     Venue : string;
-    Time : string;
+    Date : string;
 }
