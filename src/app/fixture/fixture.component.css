@@ -21,3 +21,8 @@
         -moz-border-radius: 0 !important;
       
 }
+
+.title-header{
+    text-align: center;
+    color: blue;
+}
